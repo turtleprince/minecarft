@@ -10,28 +10,32 @@ var player_object = "";
 var block_object = "";
 
 function player_update() {
-    fabric.Image.fromURL("player.png", function (IMG) {
-        player_object = IMG;
-        player_object.scaleToHeight(150);
+    fabric.Image.fromURL("player.png", function(Img) {
+        player_object = Img;
+    
         player_object.scaleToWidth(150);
+        player_object.scaleToHeight(140);
         player_object.set({
-            top: player_y,
-            left: player_x
+        top:player_y,
+        left:player_x
         });
         canvas.add(player_object);
-    });
+    
+        });
 }
 function block_update(get_image) {
-    fabric.Image.fromURL(get_image, function (IMG) {
-        block_object = IMG;
-        block_object.scaleToHeight(block_height);
+    fabric.Image.fromURL(get_image, function(Img) {
+        block_object = Img;
+    
         block_object.scaleToWidth(block_width);
+        block_object.scaleToHeight(block_height);
         block_object.set({
-            top: player_y,
-            left: player_x
+        top:player_y,
+        left:player_x
         });
         canvas.add(block_object);
-    });
+    
+        });
 }
 
 window.addEventListener("keydown", myKeydown);
@@ -39,21 +43,21 @@ function myKeydown(e) {
     keyPressed = e.keyCode;
     console.log(keyPressed);
     if(keyPressed=="38"){
-        //up();
+        up();
         console.log("up");
     }
     if(keyPressed=="40"){
-        //down();
+        down();
         console.log("down");
 
     }
     if(keyPressed=="37"){
-        //left();
+        left();
         console.log("left");
 
     }
     if(keyPressed=="39"){
-        //right();
+        right();
         console.log("right")
     }
     if(keyPressed=="84"){
